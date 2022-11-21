@@ -1,0 +1,21 @@
+<div class="flex justify-center mb-4 break-inside-avoid">
+  <div class="rounded-lg shadow-lg bg-white w-11/12 sm:w-auto sm:max-w-sm">
+    <div class="flex justify-center">
+      <img class="rounded-t-lg h-52 p-2" src={{technology.logo}} alt={{technology.name}} />
+    </div>
+    <div class="p-6">
+      <h5 class="text-gray-900 text-xl font-medium mb-2">{{technology.name}}</h5>
+      <p class="hidden sm:block text-gray-700 text-base mb-4 h-32 overflow-clip">
+        {{technology.description}}...
+      </p>
+      <p class="text-xs">
+        <span
+          class=" m-1 text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-blue-400 text-white rounded-full"
+          *ngFor="let tag of technology.tags">{{tag}}</span>
+      </p>
+      <a class="inline-block mt-4 px-6 py-2 border-2 border-blue-400 text-blue-400 font-medium text-xs leading-tight uppercase rounded-md hover:bg-blue-400 hover:text-white focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+        [routerLink]="['/technology/'+technology._id]">See
+        more...</a>
+    </div>
+  </div>
+</div>

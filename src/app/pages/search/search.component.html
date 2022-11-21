@@ -1,0 +1,13 @@
+<h1>
+  Searching: <small>{{query}}</small>
+</h1>
+
+<div * ngIf="technologies.length === 0">
+  <div role="alert">
+    No technologies were found using: {{query}}
+  </div>
+</div>
+
+<div>
+  <app-technology-card [technology]="technology" *ngFor="let technology of technologies"></app-technology-card>
+</div>

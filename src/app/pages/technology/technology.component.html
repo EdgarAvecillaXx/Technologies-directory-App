@@ -1,0 +1,23 @@
+<h1 class="w-11/12 sm:w-4/5 m-auto text-3xl my-2 font-semibold">{{technology.name | uppercase }}
+  <small>{{technology.createdAt | date: 'y'}}</small>
+</h1>
+<hr class="w-11/12 sm:w-4/5 m-auto" />
+
+<div class="m-auto flex-column sm:flex bg-white rounded-lg mt-4 w-11/12 sm:w-4/5 p-8  sm:pl-0">
+  <div class="flex-column sm:items-center sm:basis-2/6 mb-4 sm:mb-0 ">
+    <img class='m-auto' [src]="technology.logo" [alt]="technology.name" />
+    <br />
+    <a class="block m-auto text-center w-4/5 px-6 py-2 border-2 border-red-500 text-red-500 font-medium text-xs leading-tight uppercase rounded-md hover:bg-red-500 hover:text-white focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+      [routerLink]="['/technologies']">Go Back</a>
+  </div>
+  <div class="sm:basis-4/6">
+    <h3 class="text-xl mb-2 font-semibold">{{technology.name}}</h3>
+    <hr>
+    <p class="text-justify ">{{technology.description}}</p>
+    <p>
+      <span
+        class="text-xs inline-block ml-2 mt-6 py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-blue-400 text-white rounded-full"
+        *ngFor="let tag of technology.tags">{{tag}}</span>
+    </p>
+  </div>
+</div>

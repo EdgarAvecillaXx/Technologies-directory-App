@@ -1,0 +1,58 @@
+<!-- Navbar goes here -->
+<nav class="bg-white shadow-lg">
+  <div class="max-w-6xl mx-auto px-6 ">
+    <div class="flex justify-between">
+      <div class="flex space-x-20">
+        <!-- Website Logo -->
+        <div>
+          <a href="#" class="flex items-center py-4 px-2">
+            <img src="./../../../assets/vecteezy_ea-logo-monogram-with-slash-style-design-template_.jpg" alt="Logo"
+              class="h-8 w-8 mr-2" />
+            <span class="font-semibold text-gray-700 text-lg">Edgar Avecilla</span>
+          </a>
+        </div>
+        <!-- Primary Navbar items -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a [routerLink]="['home']" routerLinkActive=" border-b-4 border-sky-500 text-sky-500 font-semibold"
+            class="py-4 px-2 text-gray-500 text-lg hover:text-sky-400 transition duration-300">Home</a>
+          <a [routerLink]="['technologies']" routerLinkActive=" border-b-4 border-sky-500 text-sky-500 font-semibold"
+            class="py-4 px-2 text-gray-500 font-semibold hover:text-sky-400 text-lg transition duration-300">Technologies</a>
+          <a [routerLink]="['about']" routerLinkActive=" border-b-4 border-sky-500 text-sky-500 font-semibold"
+            class="py-4 px-2 text-gray-500 font-semibold hover:text-sky-400 text-lg transition duration-300">About</a>
+        </div>
+
+      </div>
+      <!-- Search items -->
+      <form class="hidden md:flex items-center space-x-6 ">
+        <input class="py-2 px-2 font-medium text-gray-500 outline-none border-b-2 border-sky-900"
+          placeholder="search technology..." type="search" aria-label="search" #searchQuery
+          (keyup.enter)="searchTechnology(searchQuery.value)" />
+        <button
+          class="py-2 px-4 font-medium tracking-wider text-lg text-white bg-sky-500 rounded hover:bg-sky-400 transition duration-300"
+          (click)="searchTechnology(searchQuery.value)">Search
+        </button>
+      </form>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex-column my-auto space-y-2">
+        <span class="block w-8 h-0.5 bg-gray-600"></span>
+        <span class="block w-8 h-0.5 bg-gray-600"></span>
+        <span class="block w-8 h-0.5 bg-gray-600"></span>
+      </div>
+    </div>
+  </div>
+
+  <!--Mobile menu-->
+  <div class="hidden mobile-menu">
+    <ul class="">
+      <li class="active"><a href="index.html"
+          class="block text-sm px-2 py-4 text-white bg-sky-400 font-semibold">Home</a></li>
+      <li><a href="#services"
+          class="block text-sm px-2 py-4 hover:bg-sky-400 hover:text-white font-semibold transition duration-300">Technologies</a>
+      </li>
+      <li><a href="#about"
+          class="block text-sm px-2 py-4 hover:bg-sky-400 hover:text-white font-semibold transition duration-300">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
